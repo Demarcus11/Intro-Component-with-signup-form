@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --clr-nuetral-hsl-700: 249, 10%, 26%;
+
+  --clr-nuetral-400: hsl(246, 25%, 77%);
+  --clr-nuetral-700: hsl(249, 10%, 26%);
+
+  --clr-primary-400: hsl(0, 100%, 74%);
+  --clr-primary-500: hsl(154, 59%, 51%);
+
+  --clr-accent-500: hsl(248, 32%, 49%);
+
+  --ff-primary: "Poppins", sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-300: 0.6rem;
+  --fs-400: 0.85rem;
+  --fs-500: 1rem;
+  --fs-600: 1.5rem;
+  --fs-700: 2rem;
+  --fs-800: 2.5rem;
+
+  --container-max-width: 70rem;
+}
+
+/* Utilities */
+.content-flow {
+  display: grid;
+  gap: var(--gap);
+}
+
+.container {
+  --gap: 3.5rem;
+
+  margin-inline: 1rem;
+  margin-top: 3rem;
+  max-width: var(--container-max-width);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+@media (min-width: 800px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    margin-top: 3rem;
+  }
+}
+
+/* General Styles */
+body {
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+  color: #fff;
+  font-size: var(--fs-500);
+  background-color: var(--clr-primary-400);
+  background-image: url("../images/bg-intro-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  body {
+    display: grid;
+    place-content: center;
+    text-align: left;
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+}
+
+h1 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semibold);
+  max-width: 15ch;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    margin: 0;
+    font-size: var(--fs-800);
+  }
+}
+
+strong {
+  font-weight: var(--fw-medium);
+}
+
+/* Learn to Code */
+.learn-to-code {
+  --gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .learn-to-code {
+    margin: auto auto;
+  }
+}
+
+/* Signup */
+.signup {
+  --gap: 1.5rem;
+}
+
+.free-trial {
+  --br: 0.5rem;
+
+  background-color: var(--clr-accent-500);
+  border-radius: var(--br);
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0px 7px 5px 0px hsl(var(--clr-nuetral-hsl-700), 0.4);
+}
+
+.free-trial span {
+  display: block;
+}
+
+.signup-form {
+  --br: 0.5rem;
+
+  display: grid;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: var(--br);
+  text-align: center;
+}
+
+.form-group div {
+  display: grid;
+  position: relative;
+}
+
+.signup-form input {
+  padding: 0.75rem;
+  border: 1px solid var(--clr-nuetral-400);
+  border-radius: var(--br);
+  /* Inputs are inline-block elements so by default its size is determined by its content, padding, margin, etc. */
+  /* Setting a percentage width makes it not depend on those and more responsive  */
+  width: 100%;
+}
+
+.signup-form input::placeholder {
+  font-size: var(--fs-400);
+  color: var(--color, black);
+}
+
+.signup-button {
+  background: var(--clr-primary-500);
+  color: #fff;
+  padding: 1rem;
+  border-radius: var(--br);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.signup-button:hover {
+  opacity: 0.5;
+}
+
+.form-footer {
+  color: var(--clr-nuetral-400);
+  font-size: var(--fs-400);
+}
+
+.terms {
+  text-decoration: none;
+  color: var(--clr-primary-400);
+  line-height: 1.7;
+}
+
+.error-message {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  color: var(--clr-primary-400);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semibold);
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.error-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  display: none;
+}
